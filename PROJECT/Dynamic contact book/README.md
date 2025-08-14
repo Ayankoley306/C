@@ -53,7 +53,7 @@ It allows users to store, view, and search phonebook entries, including name, ph
 4. Run The Program:
 
     ```bash
-    ./phonebook # Mac / linux
+    ./phonebook      # Mac / linux
     ./output.exe     # For Windows, you can also use: output.exe
 5. Follow the menu:
 
