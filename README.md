@@ -7,7 +7,7 @@ It’s a mix of solved problems, small programs, and hands-on projects to apply 
 
 ## 📂 Repository Structure
 
-- **Practice_Problems/**  
+- **PRACTICE_PROBLEMS/**  
   Contains 87 solved C programming problems covering topics like:
   - Variables, Data Types, and Operators
   - Conditional Statements
@@ -58,12 +58,14 @@ It’s a mix of solved problems, small programs, and hands-on projects to apply 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Ayankoley306/C.git
-2. Open the Project File Or Practice Problem File
+2. Navigate to the desired folder:
     ```bash
-   cd PROJECT # PRACTICE_PROBLEMS
+    cd C/PRACTICE_PROBLEMS  #For Practice Problems
 
-   cd FOLDER_NAME
+    cd C/PROJECT    # For Projrcts
+    cd foldername   #For Open Specific Project
 3. Open Terminal And Run The Program
     ```bash
-    gcc filename.c
-    ./a.exe #For windows
+    gcc filename.c -o output
+    ./output     # For Windows, you can also use: output.exe
+> **NOTE:** For practice problems, uncomment the specific problem you want to run (select and Ctrl+/). If you don't use **-o output** then the there will be a a.exe file so in terminam type **./a.exe**.
