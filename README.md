@@ -57,7 +57,7 @@ It’s a mix of solved problems, small programs, and hands-on projects to apply 
 ## 🚀 How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ayankoley306/C.git
+   git clone https://github.com/Ayankoley306/C-Programming-Language.git
 2. Navigate to the desired folder:
     ```bash
     cd C/PRACTICE_PROBLEMS  #For Practice Problems
