@@ -67,7 +67,8 @@ It’s a mix of solved problems, small programs, and hands-on projects to apply 
 3. Open Terminal And Run The Program
     ```bash
     gcc filename.c -o output
-    ./output     # For Windows, you can also use: output.exe
+    ./output.exe     # For Windows
+    .output          # For Mac / Linux
 > **NOTE** : -
 > - For practice problems, uncomment the specific problem you want to run (select and Ctrl+/).<br>
 > - If you don't use **-o output** then the there will be a a.exe file so in terminam type **./a.exe**.
