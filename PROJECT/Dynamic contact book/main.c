@@ -40,6 +40,7 @@ int main()
         fprintf(fnum, "Number: %llu\t", student[idx].number);
         fprintf(fnum, "Email: %s\n", student[idx].email);
         idx++;
+        fflush(fnum);
       }
     }
     else if (choice == 3)
