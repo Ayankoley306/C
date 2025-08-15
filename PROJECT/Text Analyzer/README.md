@@ -1,22 +1,16 @@
-# Recursive Math Tool in C
+# Text Analyser in C
 
-This project is a simple math tools written in C.<br>
-It allows users to perform various mathamatical operations in math like Factorial, Power, Fibonacci, Sum Of Digits, Even or Odd. Simple menu-driven interface.
+This project is a simple text analyser written in C.
+It allows users to Total words,total charactor and total vowerls in the text in the text.txt file. User can enter text or paragraphs to run the operations.
 
 ---
 ## 📂 Features
 
- - Preform various mathamatical operations:
- 
- - Factorial
+ - Count total words.
 
- - Power
+ - Count total charactors.
 
- - Fibonacci
-
- - Sum Of Digits
-
- - Even or Odd
+ - Count total vowels.
 
  - Simple menu-driven interface.
 
@@ -44,48 +38,40 @@ It allows users to perform various mathamatical operations in math like Factoria
 2. Navigate to the desired folder:
 
     ```bash
-     cd '.\PROJECT\Recursive Math Tool\'    # For open the projrct file   
+    cd '.\PROJECT\Text Analyzer\'    # For the projrct file   
 3. Compile The Program:
 
     ```bash
-    gcc tools.c -o tools
+    gcc text.c -o text
 4. Run The Program:
 
     ```bash
-    ./tools         # Mac / linux
-    ./tools.exe     # For Windows, you can also use: output.exe
+    ./text         # Mac / linux
+    ./text.exe     # For Windows, you can also use: output.exe
 5. Follow the menu:
 
- - Factorial 
+ - Total Word Count 
 
- - Power
+ - Total Charactor Count 
 
- - Fibonacci
-
- - Sum Of Digits
-
- - Even or Odd
-
- - Exit 
+ - Total vower Count
 
 
  ---
 
 ## ⚙️ Usage Notes
 
- - Follow the instructions
+ - First enter the text or paragraph in the text.txt file
 
- - When entering the numbers make sure check again.
-
- - Every operation will show answers.
+ - Follow the instractions.
 
  ---
 
 ## 🎯 Purpose
 
- - Practice functions, work flow, and techneques in C.
+ - Practice file handling, string operations in C.
 
- - Learn basic input validation and menu-driven programs.
+ - Learn basic file reading and menu-driven programs.
 
  - Understand how to persist data using text files.
 

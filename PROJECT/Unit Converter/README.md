@@ -1,22 +1,18 @@
-# Recursive Math Tool in C
+# Unit converter in C
 
-This project is a simple math tools written in C.<br>
-It allows users to perform various mathamatical operations in math like Factorial, Power, Fibonacci, Sum Of Digits, Even or Odd. Simple menu-driven interface.
+This project is a simple Unit converter written in C.<br>
+It allows users to convert units of temperature, weight, length. User can select units and convert.
 
 ---
 ## 📂 Features
 
- - Preform various mathamatical operations:
- 
- - Factorial
+ - Converts units of different values.
 
- - Power
+ - Temperature 
 
- - Fibonacci
+ - Weigth
 
- - Sum Of Digits
-
- - Even or Odd
+ - Lenght
 
  - Simple menu-driven interface.
 
@@ -44,50 +40,41 @@ It allows users to perform various mathamatical operations in math like Factoria
 2. Navigate to the desired folder:
 
     ```bash
-     cd '.\PROJECT\Recursive Math Tool\'    # For open the projrct file   
+    cd '.\PROJECT\Unit Converter\'    # For the projrct file   
 3. Compile The Program:
 
     ```bash
-    gcc tools.c -o tools
+    gcc unit.c -o unit
 4. Run The Program:
 
     ```bash
-    ./tools         # Mac / linux
-    ./tools.exe     # For Windows, you can also use: output.exe
+    ./unit         # Mac / linux
+    ./unit.exe     # For Windows, you can also use: output.exe
 5. Follow the menu:
 
- - Factorial 
+ - Temperature
 
- - Power
+ - Weight
 
- - Fibonacci
-
- - Sum Of Digits
-
- - Even or Odd
-
- - Exit 
-
-
+ - Lenght
+ 
  ---
 
 ## ⚙️ Usage Notes
 
- - Follow the instructions
+ - Carefully select the units.
 
- - When entering the numbers make sure check again.
+ - enter the value in numbers
 
- - Every operation will show answers.
+ - do not enter units after the value(100 cm ❌)
 
  ---
 
 ## 🎯 Purpose
 
- - Practice functions, work flow, and techneques in C.
+ - Practice math operations and filehandeling in C.
 
- - Learn basic input validation and menu-driven programs.
-
- - Understand how to persist data using text files.
+ - Understand how to worlflow of data using multiple functions.
 
  ---
 

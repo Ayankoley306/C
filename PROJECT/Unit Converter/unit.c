@@ -1,47 +1,72 @@
 #include <stdio.h>
 char work();
-void temperature();
-void weight();
-void length();
+char temperature();
+char weight();
+char length();
 int main()
 {
-  printf("-:WELCOME TO UNIT CONVERTOR:-\n");
-  char choice;
-  do
+  printf("\t-:WELCOME TO UNIT CONVERTOR:-\n");
+  char choice = 'a';
+  while (choice != 'q' || choice == 'Q')
   {
-    choice = work();
-  } while (choice != 'q' || choice == 'Q');
-  printf("-:THANK YOU FOR USING UNIT CONVERTOR:-\nBY:- AYAN KOLEY.");
+    if (choice == 'a')
+    {
+      choice = work();
+    }
+    else if (choice == 't' || choice == 'T')
+    {
+      choice = temperature();
+    }
+    else if (choice == 'w' || choice == 'W')
+    {
+      choice = weight();
+    }
+    else if (choice == 'l' || choice == 'L')
+    {
+      choice = length();
+    }
+  }
+  printf("\t-:THANK YOU FOR USING UNIT CONVERTOR:-\n\t\tBY:- AYAN KOLEY.");
   return 0;
 }
 // process functions
 char work()
 {
-  printf("What you want to convert-->\n1. Temperature(t):-\n2. Weight(w):-\n3. Lenght(l):-\nEnter Code: ");
-  char choise;
-  scanf(" %c", &choise);
-  if (choise == 't' || choise == 'T')
+  printf("What you want to convert-->\n1. Temperature(t):-\n2. Weight(w):-\n3. Lenght(l):-\n4. Exit program(q):-\nEnter Code:> ");
+  char choice;
+  scanf(" %c", &choice);
+  if (choice == 't' || choice == 'T')
   {
-    temperature();
+    return 't';
   }
-  else if (choise == 'w' || choise == 'W')
+  else if (choice == 'w' || choice == 'W')
   {
-    weight();
+    return 'w';
   }
-  else if (choise == 'l' || choise == 'L')
+  else if (choice == 'l' || choice == 'L')
   {
-    length();
+    return 'l';
+  }
+  else if (choice == 'q' || choice == 'Q')
+  {
+    return 'q';
   }
   else
   {
     printf("Error: Please enter valid input.\n");
     printf("Try again (t)/ quit the program(q): ");
-    scanf(" %c", &choise);
+    char ch;
+    scanf(" %d", &ch);
+    if (ch == 't')
+    {
+      return 'a';
+    }
+    return 'q';
   }
-  return choise;
+  return 'q';
 }
 // key functions
-void temperature()
+char temperature()
 {
   char form;
   printf("celcius To Fahrenheit(c) / Fahrenheit To Celcius(f)");
@@ -52,8 +77,8 @@ void temperature()
     printf("Enter celcius: ");
     scanf("%f", &c);
     f = (c * 1.8) + 32;
-    printf("%f Degree celcius is equal to %f Degree.", c, f);
-    work();
+    printf("%.2f Degree celcius is equal to %.2f Degree.\n", c, f);
+    printf("---------------------------------------------------\n");
   }
   else if (form == 'f' || form == 'F')
   {
@@ -61,8 +86,8 @@ void temperature()
     printf("Enter fharenheit: ");
     scanf("%f", &f);
     c = (f - 32) * 5 / 9;
-    printf("%f Degree celcius is equal to %f Degree.", f, c);
-    work();
+    printf("%.2f Degree celcius is equal to %.2f Degree.\n", f, c);
+    printf("---------------------------------------------------\n");
   }
   else
   {
@@ -72,16 +97,21 @@ void temperature()
     scanf(" %c", &w);
     if (w == 't' || w == 'T')
     {
-      temperature();
+      return 't';
     }
-    else
-    {
-      work();
-    }
+    return 'a';
   }
+  char ch;
+  printf("Do you want to try again(y/n): ");
+  scanf(" %c", &ch);
+  if (ch == 'y' || ch == 'Y')
+  {
+    return 't';
+  }
+  return 'a';
 }
 
-void weight()
+char weight()
 {
   char u1, u2;
   printf("Enter your first unit[Miligram(m)/Gram(g)/Kilogram(k)/Ton(t)]: ");
@@ -97,19 +127,19 @@ void weight()
       printf("Miligram: ");
       scanf("%f", &v1);
       printf("%.2f miligrams is equals to %.2f grams\n", v1, v1 / 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Miligram: ");
       scanf("%f", &v1);
       printf("%.2f miligram is equals to %.2f kilograms\n", v1, v1 / 1000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 't':
       printf("Miligram: ");
       scanf("%f", &v1);
       printf("%.2f miligrams is equals to %.2f tons\n", v1, v1 / 10000000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -124,19 +154,19 @@ void weight()
       printf("Grams: ");
       scanf("%f", &v1);
       printf("%f Grams is equals to %f miligrams\n", v1, v1 * 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Grams: ");
       scanf("%f", &v1);
       printf("%f Grams is equals to %f kilograms\n", v1, v1 / 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 't':
       printf("Grams: ");
       scanf("%f", &v1);
       printf("%f Grams is equals to %f tons\n", v1, v1 / 1000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -151,19 +181,19 @@ void weight()
       printf("Kilograms: ");
       scanf("%f", &v1);
       printf("%.2f Kilograms is equals to %.2f miligrams\n", v1, v1 * 1000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'g':
       printf("Kilograms: ");
       scanf("%f", &v1);
       printf("%.2f Kilograms is equals to %.2f grams\n", v1, v1 * 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 't':
       printf("Kilograms: ");
       scanf("%f", &v1);
       printf("%.2f Kilograms is equals to %.2f tons\n", v1, v1 / 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -178,19 +208,19 @@ void weight()
       printf("Tons: ");
       scanf("%f", &v1);
       printf("%.2f Tons is equals to %.2f miligrams\n", v1, v1 * 1000000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'g':
       printf("Tons: ");
       scanf("%f", &v1);
       printf("%.2f Tons is equals to %.2f grams\n", v1, v1 * 1000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Tons: ");
       scanf("%f", &v1);
       printf("%.2f Tons is equals to %.2f kilograms\n", v1, v1 * 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -200,18 +230,23 @@ void weight()
     char w;
     printf("Try again (t)/ Return to main menu(r)\n: ");
     scanf(" %c", &w);
-    if (w == 't' || w == "T")
+    if (w == 't' || w == 'T')
     {
-      weight();
+      return 'w';
     }
-    else
-    {
-      work();
-    }
+    return 'a';
   }
+  char ch;
+  printf("Do you want to try again(y/n): ");
+  scanf(" %c", &ch);
+  if (ch == 'y' || ch == 'Y')
+  {
+    return 'w';
+  }
+  return 'a';
 }
 
-void length()
+char length()
 {
   char u1, u2;
   printf("please enter first unit[Milimeter(l)/Centimeter(c)/Meter(m)/Kilometer(k)/Inch(i)/Feet(f)]: ");
@@ -227,31 +262,31 @@ void length()
       printf("Milimeter: ");
       scanf("%f", &v1);
       printf("%.2f milimeter is equals to %.2f centimeter\n.", v1, v1 / 10);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'm':
       printf("Milimeter: ");
       scanf("%f", &v1);
       printf("%.2f milimeter is equals to %.2f meter.\n", v1, v1 / 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Milimeter: ");
       scanf("%f", &v1);
       printf("%.2f milimeter is equals to %.2f kilometer.\n", v1, v1 / 1000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'i':
       printf("Milimeter: ");
       scanf("%f", &v1);
       printf("%.2f milimeter is equals to %.2f inch.\n", v1, v1 / 25.4);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'f':
       printf("Milimeter: ");
       scanf("%f", &v1);
       printf("%.2f milimeter is equals to %.2f feet.\n", v1, v1 / 304.8);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -266,31 +301,31 @@ void length()
       printf("Centimeter: ");
       scanf("%f", &v1);
       printf("%.2f Centimeter is equals to %.2f milimeter\n.", v1, v1 * 10);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'm':
       printf("Centimeter: ");
       scanf("%f", &v1);
       printf("%.2f Centimeter is equals to %.2f meter\n.", v1, v1 / 100);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Centimeter: ");
       scanf("%f", &v1);
       printf("%.2f Centimeter is equals to %.2f kilomete\nr.", v1, v1 / 100000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'i':
       printf("Centimeter: ");
       scanf("%f", &v1);
       printf("%.2f Centimeter is equals to %.2f inch\n.", v1, v1 * 0.393701);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'f':
       printf("Centimeter: ");
       scanf("%f", &v1);
       printf("%.2f Centimeter is equals to %.2f feet\n.", v1, v1 * 0.0328084);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -305,31 +340,31 @@ void length()
       printf("Meter: ");
       scanf("%f", &v1);
       printf("%.2f Meter is equals to %.2f milimeter\n.", v1, v1 * 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'c':
       printf("Meter: ");
       scanf("%f", &v1);
       printf("%.2f Meter is equals to %.2f centimeter\n.", v1, v1 * 100);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Meter: ");
       scanf("%f", &v1);
       printf("%.2f Meter is equals to %.2f kilometer\n.", v1, v1 / 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'i':
       printf("Meter: ");
       scanf("%f", &v1);
       printf("%.2f Meter is equals to %.2f inch\n.", v1, v1 * 39.3701);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'f':
       printf("Mmeter: ");
       scanf("%f", &v1);
       printf("%.2f Meter is equals to %.2f feet\n.", v1, v1 * 3.28084);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -344,31 +379,31 @@ void length()
       printf("Kilometer: ");
       scanf("%f", &v1);
       printf("%.2f Kilometer is equals to %.2f milimeter\n.", v1, v1 * 1000000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'c':
       printf("Kilometer: ");
       scanf("%f", &v1);
       printf("%.2f Kilometer is equals to %.2f centimeter\n.", v1, v1 * 100000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'm':
       printf("Kilometer: ");
       scanf("%f", &v1);
       printf("%.2f Kilometer is equals to %.2f meter\nr.", v1, v1 * 1000);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'i':
       printf("Kilometer: ");
       scanf("%f", &v1);
       printf("%.2f Kilometer is equals to %.2f inch\n.", v1, v1 * 39370.1);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'f':
       printf("Kilometer: ");
       scanf("%f", &v1);
       printf("%.2f Kilometer is equals to %.2f feet\n.", v1, v1 * 3280.84);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -383,31 +418,31 @@ void length()
       printf("Inch: ");
       scanf("%f", &v1);
       printf("%.2f Inch is equals to %.2f milimeter\n.", v1, v1 * 25.4);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'c':
       printf("Inch: ");
       scanf("%f", &v1);
       printf("%.2f Inch is equals to %.2f centimeter\n.", v1, v1 * 2.54);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'm':
       printf("Inch: ");
       scanf("%f", &v1);
       printf("%.2f Inch is equals to %.2f meter\nr.", v1, v1 * 0.0254);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Inch: ");
       scanf("%f", &v1);
       printf("%.2f Inch is equals to %.2f kilometer\n.", v1, v1 / 39370.1);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'f':
       printf("Inch: ");
       scanf("%f", &v1);
       printf("%.2f Inch is equals to %.2f feet\n.", v1, v1 / 12);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -422,31 +457,31 @@ void length()
       printf("Feet: ");
       scanf("%f", &v1);
       printf("%.2f Feet is equals to %.2f milimeter\n.", v1, v1 * 304.8);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'c':
       printf("Feet: ");
       scanf("%f", &v1);
       printf("%.2f Feet is equals to %.2f centimeter\n.", v1, v1 * 30.48);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'm':
       printf("Feet: ");
       scanf("%f", &v1);
       printf("%.2f Feet is equals to %.2f meter\nr.", v1, v1 * 0.3048);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'k':
       printf("Feet: ");
       scanf("%f", &v1);
       printf("%.2f Feet is equals to %.2f kilometer\n.", v1, v1 / 3281);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     case 'i':
       printf("Feet: ");
       scanf("%f", &v1);
       printf("%.2f Feet is equals to %.2f feet\n.", v1, v1 * 12);
-      work();
+      printf("---------------------------------------------------\n");
       break;
     }
   }
@@ -458,11 +493,16 @@ void length()
     scanf(" %c", &w);
     if (w == 't' || w == 'T')
     {
-      length();
+      return 'l';
     }
-    else
-    {
-      work();
-    }
+    return 'a';
   }
+  char ch;
+  printf("Do you want to try again(y/n): ");
+  scanf(" %c", &ch);
+  if (ch == 'y' || ch == 'Y')
+  {
+    return 'l';
+  }
+  return 'a';
 }

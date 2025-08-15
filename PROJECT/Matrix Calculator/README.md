@@ -83,11 +83,11 @@ It allows users to perform various operations in matrix like Add, Subtract, Mult
 
 ## 🎯 Purpose
 
- - Practice file handling, structures, and string operations in C.
+ - Practice Arrays, array techneques in C.
 
  - Learn basic input validation and menu-driven programs.
 
- - Understand how to persist data using text files.
+ - Understand reuseability of functions.
 
  ---
 

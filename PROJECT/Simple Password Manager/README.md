@@ -1,27 +1,19 @@
-# Recursive Math Tool in C
+# Simple Password Mannager
 
-This project is a simple math tools written in C.<br>
-It allows users to perform various mathamatical operations in math like Factorial, Power, Fibonacci, Sum Of Digits, Even or Odd. Simple menu-driven interface.
+This project is a simple password manager written in C.<br>
+This project allow us to check a password or create strong password that have charactors, numbers, special charactors.
 
----
 ## 📂 Features
 
- - Preform various mathamatical operations:
- 
- - Factorial
+ - Allow user to enter password.
 
- - Power
+ - Check the password if it containes charactors, numbers, special charactors.
 
- - Fibonacci
-
- - Sum Of Digits
-
- - Even or Odd
+ - User friendly instractions.
 
  - Simple menu-driven interface.
-
----
-
+ 
+ ---
 ## 🛠 Tools & Environment
 
  - Language: C
@@ -35,7 +27,7 @@ It allows users to perform various mathamatical operations in math like Factoria
  - Extentions: C/C++ Extention Pack
 
  ---
- ## 🚀 How to Run
+  ## 🚀 How to Run
 
 1. Clone the repository:
 
@@ -44,50 +36,32 @@ It allows users to perform various mathamatical operations in math like Factoria
 2. Navigate to the desired folder:
 
     ```bash
-     cd '.\PROJECT\Recursive Math Tool\'    # For open the projrct file   
+     cd '.\PROJECT\Simple Password manager\'    # For open the projrct file   
 3. Compile The Program:
 
     ```bash
-    gcc tools.c -o tools
+    gcc password.c -o password
 4. Run The Program:
 
     ```bash
-    ./tools         # Mac / linux
-    ./tools.exe     # For Windows, you can also use: output.exe
-5. Follow the menu:
+    ./password         # Mac / linux
+    ./password.exe     # windows
 
- - Factorial 
-
- - Power
-
- - Fibonacci
-
- - Sum Of Digits
-
- - Even or Odd
-
- - Exit 
-
-
- ---
-
+---
 ## ⚙️ Usage Notes
 
  - Follow the instructions
 
- - When entering the numbers make sure check again.
-
- - Every operation will show answers.
+ - When entering the passowrd  make sure not type space.
 
  ---
+ ## 🎯 Purpose
 
-## 🎯 Purpose
-
- - Practice functions, work flow, and techneques in C.
+ - Practice string operations, filters in C.
 
  - Learn basic input validation and menu-driven programs.
 
- - Understand how to persist data using text files.
+ - Understand how to data using multiple conditions.
 
  ---
 

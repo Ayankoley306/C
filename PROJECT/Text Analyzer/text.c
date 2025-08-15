@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+int work();
 int countcharactor(FILE *file);
 int wordcount(FILE *file);
 int countvowel(FILE *file);
@@ -17,15 +18,64 @@ int main()
   {
     printf("File found successfully!\n");
   }
-  countcharactor(file);
-  rewind(file);
-  wordcount(file);
-  rewind(file);
-  countvowel(file);
-  printf("THANK YOU");
+  int choice = 4;
+  while (choice != 0)
+  {
+    if (choice == 4)
+    {
+      choice = work();
+    }
+    else if (choice == 1)
+    {
+      choice = wordcount(file);
+      rewind(file);
+    }
+    else if (choice == 2)
+    {
+      choice = countcharactor(file);
+      rewind(file);
+    }
+    else if (choice == 3)
+    {
+      choice = countvowel(file);
+      rewind(file);
+    }
+  }
+
+  printf("\t<--:THANK YOU:-->\n");
   fclose(file);
   return 0;
 }
+
+int work()
+{
+  int choice = 4;
+  printf("Total Word Count (1):-\nTotal Charactor Count (2):-\nTotal vower Count(3):-\nExit (0):-\n==> ");
+  scanf("%d", &choice);
+
+  if (choice == 1)
+  {
+    return 1;
+  }
+  else if (choice == 2)
+  {
+    return 2;
+  }
+  else if (choice == 3)
+  {
+    return 3;
+  }
+  else if (choice == 0)
+  {
+    return 0;
+  }
+  else
+  {
+    printf("Please enter valid code:-\n");
+    return 4;
+  }
+}
+
 int countcharactor(FILE *file)
 {
   char ch;
@@ -35,8 +85,10 @@ int countcharactor(FILE *file)
     count++;
   }
   printf("Total charactor is %d\n", count);
-  return 0;
+  printf("-----------------------------------------\n");
+  return 4;
 }
+
 int wordcount(FILE *file)
 {
   char ch;
@@ -55,8 +107,10 @@ int wordcount(FILE *file)
     }
   }
   printf("Total word %d\n", countword);
-  return 0;
+  printf("-----------------------------------------\n");
+  return 4;
 }
+
 int countvowel(FILE *file)
 {
   char ch;
@@ -69,5 +123,6 @@ int countvowel(FILE *file)
     }
   }
   printf("There is %d vowels in the text\n", count);
-  return 0;
+  printf("-----------------------------------------\n");
+  return 4;
 }
