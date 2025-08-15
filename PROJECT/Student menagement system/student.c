@@ -12,6 +12,7 @@ struct student
   int total;
   char grade[5];
 };
+
 #define MAINMENU 6
 int storeData(FILE *file, struct student stu[]);
 int main_menu();
@@ -30,7 +31,12 @@ int main()
   if (fstu == NULL)
   {
     printf("File not found!\n");
+    printf("Exiting the program...\n");
     return 0;
+  }
+  else
+  {
+    printf("Loading Data From File Wait A Moment......\n");
   }
   struct student XII[60];
   int idx = storeData(fstu, XII);
@@ -45,10 +51,12 @@ int main()
     else if (choice == 1)
     {
       choice = adddata(fstu, XII, &idx);
+      fflush(fstu);
     }
     else if (choice == 2)
     {
       choice = seedata(XII, idx);
+      fflush(fstu);
     }
     else if (choice == 3)
     {
@@ -64,6 +72,7 @@ int main()
       return 0;
     }
   }
+  fflush(fstu);
   fclose(fstu);
   printf("Exiting the program...\n");
   return 0;
@@ -86,7 +95,7 @@ int storeData(FILE *file, struct student stu[])
 int main_menu()
 {
   int choice = 0;
-  printf("Operations-->\nEnter Student Data (1):-\nSee Student Data (2):-\n3. Alter Data (3)\nQuit (0):-\nEnter Code: ");
+  printf("Operations-->\nEnter New Student Data (1):-\nSee Student Data (2):-\n3. Alter Student Data (3)\nQuit (0):-\nEnter Code: ");
   scanf("%d", &choice);
   if (choice == 1)
   {
@@ -114,7 +123,6 @@ int main_menu()
 int adddata(FILE *file, struct student stu[], int *i)
 {
   printf("Enter Student Data:->\nName: ");
-  scanf("%s", stu[*i].Name);
   if (strlen(stu[*i].Name) == 0)
   {
     printf("Please enter name correctly!\n");
@@ -475,6 +483,7 @@ int editdata(struct student stu[], int index)
   {
     fprintf(efile, "%s %d %d %d %d %d %d %d %s\n", stu[p].Name, stu[p].Roll, stu[p].Bengali, stu[p].english, stu[p].Accountancy, stu[p].Cost_tax, stu[p].Coma, stu[p].total, stu[p].grade);
   }
+  fflush(efile);
   printf("Data Updated successfully!\n");
   fclose(efile);
   return alterdata(stu, index);
@@ -508,6 +517,7 @@ int deletedata(struct student stu[], int *index)
   {
     fprintf(Dfile, "%s %d %d %d %d %d %d %d %s\n", stu[p].Name, stu[p].Roll, stu[p].Bengali, stu[p].english, stu[p].Accountancy, stu[p].Cost_tax, stu[p].Coma, stu[p].total, stu[p].grade);
   }
+  fflush(Dfile);
   fclose(Dfile);
   (*index)--;
   return alterdata(stu, *index);
