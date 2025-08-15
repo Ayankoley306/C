@@ -1,5 +1,0 @@
-Name: Ayankoley	Roll No.: 20  Marks: 466	Grade: O
-Name: Soumikdas	Roll No.: 40  Marks: 419	Grade: A
-Name: Krishnendudas	Roll No.: 26	Marks: 453	Grade: O
-Name: Sayansantra	Roll No.: 36	Marks: 447	Grade: A
-Name: Arnabdas	Roll No.: 18	Marks: 444	Grade: A
