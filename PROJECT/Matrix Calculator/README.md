@@ -1,22 +1,22 @@
-# Phonebook Management System in C
+# Matrix Calculator in C
 
-This project is a simple Phonebook Management System written in C.
-It allows users to store, view, and search phonebook entries, including name, phone number, and email. The data is saved to a text file (Number.txt) so it persists between program runs.
+This project is a Matrix calculator written in C.<br>
+It allows users to perform various operations in matrix like Add, Subtract, Multiply, Transpose of matrix, Determinant of matrix. user Friendly Interface. This is not Graphic User Interface.
 
 ---
 ## 📂 Features
 
- - Add new phonebook entries with:
+ - Preform various operations in matrix:
+ 
+ - Addition
 
- - Name
+ - Subtraction
 
- - 10-digit phone number
+ - Multiplication
 
- - Email (must contain @)
+ - Transpose of Matrix
 
- - View/search existing entries by name or phone number.
-
- - Data is stored in a file (Number.txt) to retain information.
+ - Determinant of matrix
 
  - Simple menu-driven interface.
 
@@ -44,33 +44,40 @@ It allows users to store, view, and search phonebook entries, including name, ph
 2. Navigate to the desired folder:
 
     ```bash
-    cd '.\PROJECT\Dynamic contact book\'   # For open the project folder
+    cd '.\PROJECT\Matrix Calculator\'    # For open the projrct file   
 3. Compile The Program:
 
     ```bash
-    gcc filename.c -o phonebook
+    gcc matrix.c -o matrix
 4. Run The Program:
 
     ```bash
-    ./phonebook      # Mac / linux
-    ./phonebook.exe     # For Windows, you can also use: output.exe
+    ./matrix         # Mac / linux
+    ./matrix.exe     # For Windows, you can also use: output.exe
 5. Follow the menu:
 
- - Enter new numbers
+ - Add two matrices (1)
 
- - See data
+ - Subtract matrices (2)
 
- - Quit program
+ - Multiply matrices (3)
+
+ - Transpose matrix (4)
+
+ - Determinant (2*2, 3*3 only) (5)
+
+ - Exit (6)
+
 
  ---
 
 ## ⚙️ Usage Notes
 
- - When entering the phone number, make sure it is 10 digits.
+ - Follow the instructions
 
- - Email must include @.
+ - When entering the row and coloums number make sure check again.
 
- - Search is case-sensitive and matches substrings in the text file.
+ - Every operation will show answers.
 
  ---
 

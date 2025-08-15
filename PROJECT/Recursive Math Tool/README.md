@@ -1,22 +1,22 @@
-# Phonebook Management System in C
+# Recursive Math Tool in C
 
-This project is a simple Phonebook Management System written in C.
-It allows users to store, view, and search phonebook entries, including name, phone number, and email. The data is saved to a text file (Number.txt) so it persists between program runs.
+This project is a simple math tools written in C.<br>
+It allows users to perform various mathamatical operations in math like Factorial, Power, Fibonacci, Sum Of Digits, Even or Odd. Simple menu-driven interface.
 
 ---
 ## 📂 Features
 
- - Add new phonebook entries with:
+ - Preform various mathamatical operations:
+ 
+ - Factorial
 
- - Name
+ - Power
 
- - 10-digit phone number
+ - Fibonacci
 
- - Email (must contain @)
+ - Sum Of Digits
 
- - View/search existing entries by name or phone number.
-
- - Data is stored in a file (Number.txt) to retain information.
+ - Even or Odd
 
  - Simple menu-driven interface.
 
@@ -44,33 +44,40 @@ It allows users to store, view, and search phonebook entries, including name, ph
 2. Navigate to the desired folder:
 
     ```bash
-    cd '.\PROJECT\Dynamic contact book\'   # For open the project folder
+     cd '.\PROJECT\Recursive Math Tool\'    # For open the projrct file   
 3. Compile The Program:
 
     ```bash
-    gcc filename.c -o phonebook
+    gcc tools.c -o tools
 4. Run The Program:
 
     ```bash
-    ./phonebook      # Mac / linux
-    ./phonebook.exe     # For Windows, you can also use: output.exe
+    ./tools         # Mac / linux
+    ./tools.exe     # For Windows, you can also use: output.exe
 5. Follow the menu:
 
- - Enter new numbers
+ - Factorial 
 
- - See data
+ - Power
 
- - Quit program
+ - Fibonacci
+
+ - Sum Of Digits
+
+ - Even or Odd
+
+ - Exit 
+
 
  ---
 
 ## ⚙️ Usage Notes
 
- - When entering the phone number, make sure it is 10 digits.
+ - Follow the instructions
 
- - Email must include @.
+ - When entering the numbers make sure check again.
 
- - Search is case-sensitive and matches substrings in the text file.
+ - Every operation will show answers.
 
  ---
 

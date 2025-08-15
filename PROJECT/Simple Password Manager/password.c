@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 int creatpassword();
 int main()
 {
@@ -13,33 +14,22 @@ int main()
 }
 int creatpassword()
 {
-  printf("Enter your password like this:-->\nspecial charactor part(only 1)\tcharector part\tnumber part\n");
-  char sch[3];
-  char ch[20];
-  char num[20];
-  char password[64] = {"007"}; // final password and salt
-  scanf(" %s %s %s", sch, ch, num);
-  strcat(password, sch);
-  strcat(password, ch);
-  strcat(password, num);
+  // printf("Enter your password like this:-->\nspecial charactor part(only 1)\tcharactor part\tnumber part\n");
+
+  char password[64] = {}; // final password and salt
+  scanf("%s", password);
+  int isNum = 0, isChar = 0, isSpCh = 1;
   if (strlen(password) > 10)
   {
-    if (strlen(sch) == 0)
+    for (int i = 0; i < strlen(password); i++)
     {
-      printf("please enter at least one special charactor!");
-      return 1;
-    }
-    if (strlen(ch) == 0)
-    {
-      printf("please enter at least one charactor!");
-      return 1;
-    }
-    if (strlen(num) == 0)
-    {
-      printf("please enter at least one number!");
-      return 1;
+      if (password[i] >= 'a' && password[i] <= 'z' || password[i] >= 'A' && password[i] <= 'Z')
+      {
+        isChar = 1;
+      }
     }
   }
+
   else
   {
     printf("password must contains 8 characters!\n Re-enter password");

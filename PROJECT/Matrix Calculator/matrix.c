@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-void takeinput(int r, int c, int m[][c]);
+void takeinput(int r, int c, int m[][c], int n);
 void printresult(int r, int c, int m[][c]);
 int operations();
 int addmatrix();
@@ -65,9 +65,9 @@ int operations()
     }
   }
 }
-void takeinput(int r, int c, int m[][c])
+void takeinput(int r, int c, int m[][c], int n)
 {
-  printf("Enter Matrix values:-->\n");
+  printf("Enter %d Matrix values:-->\n", n);
   for (int i = 0; i < r; i++)
   {
     for (int j = 0; j < c; j++)
@@ -100,8 +100,8 @@ int addmatrix()
   int matrix_num1[mr][mc];
   int matrix_num2[mr][mc];
   int matrix_result[mr][mc];
-  takeinput(mr, mc, matrix_num1);
-  takeinput(mr, mc, matrix_num2);
+  takeinput(mr, mc, matrix_num1, 1);
+  takeinput(mr, mc, matrix_num2, 2);
   for (int i = 0; i < mr; i++)
   {
     for (int j = 0; j < mc; j++)
@@ -131,8 +131,8 @@ int subtractmatrix()
   int matrix_num1[mr][mc];
   int matrix_num2[mr][mc];
   int matrix_result[mr][mc];
-  takeinput(mr, mc, matrix_num1);
-  takeinput(mr, mc, matrix_num2);
+  takeinput(mr, mc, matrix_num1, 1);
+  takeinput(mr, mc, matrix_num2, 2);
   for (int i = 0; i < mr; i++)
   {
     for (int j = 0; j < mc; j++)
@@ -163,12 +163,12 @@ int multiplymatrix()
   printf("Enter first matrix column number: ");
   scanf("%d", &m1c);
   int matrix_num1[m1r][m1c];
-  takeinput(m1r, m1c, matrix_num1);
+  takeinput(m1r, m1c, matrix_num1, 1);
   m2r = m1c;
   printf("As per rules second matrix row number is equals to first matrix column number!\nEnter second matrix column number: ");
   scanf("%d", &m2c);
   int matrix_num2[m2r][m2c];
-  takeinput(m2r, m2c, matrix_num2);
+  takeinput(m2r, m2c, matrix_num2, 2);
   int matrix_result[m1r][m2c];
   for (int i = 0; i < m1r; i++)
   {
@@ -202,7 +202,7 @@ int transposematrix()
   scanf("%d", &mc);
   int tran_matrix[mr][mc];
   int result_matrix[mc][mr];
-  takeinput(mr, mc, tran_matrix);
+  takeinput(mr, mc, tran_matrix, 1);
   for (int i = 0; i < mr; i++)
   {
     for (int j = 0; j < mc; j++)
@@ -232,7 +232,7 @@ int determinamrematrix()
     mr = 2;
     mc = 2;
     int det_matrix[mr][mc];
-    takeinput(mr, mc, det_matrix);
+    takeinput(mr, mc, det_matrix, 1);
     result = (det_matrix[0][0] * det_matrix[1][1]) - (det_matrix[0][1] * det_matrix[1][0]);
     printf("The Determine of matrix is %d\n", result);
   }
@@ -241,7 +241,7 @@ int determinamrematrix()
     mr = 3;
     mc = 3;
     int det_matrix[mr][mc];
-    takeinput(mr, mc, det_matrix);
+    takeinput(mr, mc, det_matrix, 1);
     result = det_matrix[0][0] * (det_matrix[1][1] * det_matrix[2][2] - det_matrix[2][1] * det_matrix[1][2]) - det_matrix[0][1] * (det_matrix[1][2] * det_matrix[2][0] - det_matrix[2][2] * det_matrix[1][0]) + det_matrix[0][2] * (det_matrix[1][0] * det_matrix[2][1] - det_matrix[2][0] * det_matrix[1][1]);
     printf("The Determine of matrix is %d\n", result);
   }
